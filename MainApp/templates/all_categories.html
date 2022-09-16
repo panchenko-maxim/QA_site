@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Categories</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Name</td><td>Description</td><td></td>
+        </tr>
+        {% for cat in categories %}
+            <tr>
+                <td>{{ cat.name }}</td> <td>{{ cat.description }}</td><td><a class="delete" href="/main/delete_category/{{ cat.id }}">X</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Create Category</h2>
+    <form action="/main/create_category/" method="get">
+        <input type="text" placeholder="Name" name=name>
+        <input type="text" placeholder="Description" name="description">
+        <input type="submit" value="Create">
+        
+    </form>
+<style>
+    table, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    td {
+        padding: 5px;
+    }
+
+    .delete {
+        padding: 4px 10px;
+        background-color: red;
+        border-radius: 2px;
+        text-decoration: none;
+        color: black;
+    }
+</style>
+</body>
+</html>
