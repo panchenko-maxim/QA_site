@@ -21,5 +21,6 @@ from django.shortcuts import HttpResponse
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('main/', include('MainApp.urls'))
+    path('main/', include('MainApp.urls')),
+    path('auth/', include('Authsys.urls'))
 ]
